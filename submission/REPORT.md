@@ -9,10 +9,14 @@
 
 ## 2. Kết quả kỹ thuật
 
-- Điểm `validate_logs.py`:
-- Tổng số traces:
-- Số PII leak còn lại:
-- Link/đường dẫn dashboard:
+- Baseline (2026-08-11, không bật incident): 10/10 request thành công với
+  concurrency 5; client P50 `1451.9 ms`, P95/P99 `1795.4 ms`.
+- Điểm `validate_logs.py`: `30/100` trên 67 log record; 60 record thiếu trường
+  bắt buộc và enrichment, 0 correlation ID hợp lệ. Đang chờ hoàn tất CP1.
+- Tổng số traces: Chưa xác minh trên Langfuse; chờ bàn giao CP2.
+- Số PII leak còn lại: `0` theo `validate_logs.py`.
+- Link/đường dẫn dashboard: [`docs/dashboard-spec.md`](../docs/dashboard-spec.md)
+  (contract: [`config/dashboard.yaml`](../config/dashboard.yaml), validator `6/6`).
 
 ## 3. Logging và tracing
 
